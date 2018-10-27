@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Raleway');
+
+body {
+    background-color: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    .navbar a {
+        text-transform: uppercase;
+        font: 14px @brand-font;
+    }
+
+    margin-top: 70px;
+}
+ h1,h2,h3,h4,h5,h6 {
+     font-family: "Raleway";
+     font-weight: 300;
+     color: #333;
+ }
+
+ p {
+     line-height: 28px;
+     margin-bottom: 25px;
+ }
+
+ .centered {
+     text-align: center;
+ }
+
+ a {
+     color: #f85c37;
+ }
+
+ a:hover, a:focus {
+     color: #7b7b7b;
+     text-decoration: none;
+     outline: 0;
+ }
+
+ hr {
+     display: block;
+     height: 1px;
+     border: 0;
+     border-top: 1px solid #ccc;
+     margin: 1em 0;
+     padding: 0;
+ }
+
+ .navbar {
+     font-weight: 800;
+     font-size: 14px;
+     padding-top: 15px;
+     padding-bottom: 15px;
+ }
+ .navbar-inverse {
+     background: #2d2d2d;
+     border-color: #2d2d2d;
+ }
+
+/*высота навигационного меню*/
+@navbar-height: 37px;
+
+/*задаем  побольше горизонтальный отступ*/
+@nav-link-padding: 10px 30px;
+
+/*фон для пунктов меню*/
+@navbar-default-bg: @panel-bg;
+
+/*цвет текста в пунктах меню*/
+@navbar-default-link-color: #b2b2b2;
+
+/*и при наведении мышки – такой же*/
+@navbar-default-link-hover-color: @navbar-default-link-color;
+
+/*фон активного пункта меню – наш специфический голубой цвет*/
+@navbar-default-link-active-bg: @brand-primary;
+
+/*цвет текста активного пункта меню*/
+@navbar-default-link-active-color: #fff;
