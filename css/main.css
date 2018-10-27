@@ -8,12 +8,6 @@ body {
     color: #555;
     -webkit-font-smoothing: antialiased;
     -webkit-overflow-scrolling: touch;
-    .navbar a {
-        text-transform: uppercase;
-        font: 14px @brand-font;
-    }
-
-    margin-top: 70px;
 }
  h1,h2,h3,h4,h5,h6 {
      font-family: "Raleway";
@@ -59,24 +53,3 @@ body {
      background: #2d2d2d;
      border-color: #2d2d2d;
  }
-
-/*высота навигационного меню*/
-@navbar-height: 37px;
-
-/*задаем  побольше горизонтальный отступ*/
-@nav-link-padding: 10px 30px;
-
-/*фон для пунктов меню*/
-@navbar-default-bg: @panel-bg;
-
-/*цвет текста в пунктах меню*/
-@navbar-default-link-color: #b2b2b2;
-
-/*и при наведении мышки – такой же*/
-@navbar-default-link-hover-color: @navbar-default-link-color;
-
-/*фон активного пункта меню – наш специфический голубой цвет*/
-@navbar-default-link-active-bg: @brand-primary;
-
-/*цвет текста активного пункта меню*/
-@navbar-default-link-active-color: #fff;
