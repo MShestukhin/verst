@@ -9,22 +9,38 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <a href="#" class="navbar-brand">
-
+            <img src="img/logo.png">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"> <a href="#" class="nav-link">Home</a> </li>
-            <li class="nav-item "> <a href="#" class="nav-link">About us</a> </li>
-            <li class="nav-item "> <a href="#" class="nav-link">Pricing</a> </li>
-            <li class="nav-item "> <a href="#" class="nav-link">Home</a> </li>
-
+            <li class="nav-item active"> <a href="#" class="nav-link">Главная</a> </li>
+             <!-- Dropdown -->
+             <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Продукция
+                    </a>
+                    <div class="dropdown-menu">
+                       <a class="dropdown-item" href="#">Javascript</a>
+                       <a class="dropdown-item" href="#">Css</a>
+                       <a class="dropdown-item" href="#">Bootstrap</a>
+                    </div>
+                 </li>
+            <li class="nav-item "> <a href="#" class="nav-link">Услуги</a> </li>
+            <li class="nav-item "> <a href="#" class="nav-link">Производство</a> </li>
+            <li class="nav-item "> <a href="#" class="nav-link">Прайс листы</a> </li>
+            <li class="nav-item "> <a href="#" class="nav-link">Пресс-центр</a> </li>
+            <li class="nav-item "> <a href="#" class="nav-link">О компании</a> </li>
+            <li class="nav-item "> <a href="#" class="nav-link">Контакты</a> </li>
         </ul>
     </div>
 </nav>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>
