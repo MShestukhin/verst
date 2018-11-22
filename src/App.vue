@@ -17,6 +17,7 @@
 
     <Header/>
     <v-content>
+
       <v-container fluid>
         <v-layout align-center justify-center>
           <v-flex  d-flex xs8>
@@ -24,15 +25,9 @@
           </v-flex>
         </v-layout>
         <ItemGroups/>
+        <SisonSeil/>
       </v-container>
-      <div class="container">
-        <div class="row centered">
-          <div class ="col-lg-8">
-            <h1>Сезонная расспродажа фитингов</h1>
-            <p>Нажмите и ознакомьтесь с прайс листом</p>
-          </div>
-        </div>
-      </div>
+
       <v-container fluid>
         <v-layout align-center justify-center>
           <v-flex  d-flex xs8>
@@ -40,14 +35,32 @@
           </v-flex>
         </v-layout>
       </v-container>
-      <v-container fluid>
+
+      <v-container grid-list-md text-xs-center>
+        <div class="row centered">
+          <h1>Техстрой это:</h1>
+        </div>
         <v-layout align-center justify-center>
           <v-flex  d-flex xs8>
-            <h1>Техстрой в цифрах</h1>
             <SibStroyNumb/>
           </v-flex>
         </v-layout>
       </v-container>
+
+      <v-container grid-list-md text-xs-center>
+        <div class="row centered">
+            <h1>Техстрой это:</h1>
+        </div>
+        <v-layout align-center justify-center>
+          <v-flex  d-flex xs16>
+            <ThisSibstroy/>
+          </v-flex>
+        </v-layout>
+        <SisonSeil/>
+      </v-container>
+
+
+
     </v-content>
     <Footer/>
   </v-app>
@@ -61,9 +74,13 @@ import Carousels from "./components/carousels";
 import ItemGroups from "./components/ItemGroups";
 import Texts from "./components/Texts";
 import SibStroyNumb from "./components/SibStroyNumb";
+import ThisSibstroy from "./components/ThisSibstroy";
+import SisonSeil from "./components/SisonSeil";
 export default {
   name: 'App',
   components: {
+      SisonSeil,
+      ThisSibstroy,
       SibStroyNumb,
       Texts,
       ItemGroups,
