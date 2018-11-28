@@ -25,7 +25,7 @@
                     white--text
                     xs12
             >
-                &copy;2018 — <strong>Vuetify</strong>
+                &copy;2018. ООО «Техстрой»
             </v-flex>
         </v-layout>
     </v-footer>

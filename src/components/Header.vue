@@ -1,5 +1,5 @@
 <template>
-    <v-toolbar>
+    <v-toolbar  :scroll-toolbar-off-screen="true">
         <v-toolbar-side-icon></v-toolbar-side-icon>
         <!--<v-toolbar-title>Title</v-toolbar-title>-->
         <!--<v-spacer></v-spacer>-->
