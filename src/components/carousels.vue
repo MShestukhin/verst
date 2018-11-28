@@ -3,8 +3,27 @@
             <v-carousel-item
                     v-for="(item,i) in items"
                     :key="i"
-                    :src="item.src"
-            ></v-carousel-item>
+            >
+                <!--<v-layout>-->
+                        <v-card>
+                            <v-img
+                                    :src="item.src"
+                                    aspect-ratio="2.75"
+                            ></v-img>
+
+                            <v-card-title primary-title>
+                                <div>
+                                    <h3 class="headline mb-0">{{item.title}}</h3>
+                                </div>
+                                <v-card-actions>
+                                    <v-btn flat color="orange">Share</v-btn>
+                                    <v-btn flat color="orange">Explore</v-btn>
+                                </v-card-actions>
+                            </v-card-title>
+
+                        </v-card>
+                <!--</v-layout>-->
+            </v-carousel-item>
         </v-carousel>
 </template>
 
@@ -15,16 +34,32 @@
             return {
                 items: [
                     {
-                        src: 'https://cdn.vuetifyjs.com/images/carousel/squirrel.jpg'
+                        src: 'https://sdelanounas.ru/i/d/3/d/d3d3LnNkZWxhbm91bmFzLnJ1L3VwbG9hZHMvNi81LzY1NjE0MjQzNzE4NjVfb3JpZy5qcGVnP19faWQ9NTcwMzE=.jpg',
+                        title: "Многослойные трубы \"МультиТех\""
                     },
                     {
-                        src: 'https://cdn.vuetifyjs.com/images/carousel/sky.jpg'
+                        src: 'http://optimapipe.ru/images/w689-h345/20180627/3a0456431aaac0aec313168ebc606ed7.jpg',
+                        title:"Многослойные трубы \"МультиТех\""
                     },
                     {
-                        src: 'https://cdn.vuetifyjs.com/images/carousel/bird.jpg'
+                        src: 'https://www.calc.ru/imgs/articles3/15/04/68857256fef30289d393.76730355.jpg',
+                        title:"Гофрированная труба"
                     },
                     {
-                        src: 'https://cdn.vuetifyjs.com/images/carousel/planet.jpg'
+                        src: 'http://optimapipe.ru/images/w689-h345/20150605/dd5d954f27e4a37754bbb83a4fb3a0e5.JPG',
+                        title: "ТРУБЫ PROSAFE"
+                    },
+                    {
+                        src: 'https://www.germesgroup.com/Product/IMG_3694.jpg',
+                        title: "Спиральновитые трубы"
+                    },
+                    {
+                        src: 'http://innoformula.ru/thumb/0tjZOuKzWC7oVxIqSSIILw/580r450/1620328/fitingi.jpg',
+                        title: "Фитинги и запорная арматура"
+                    },
+                    {
+                        src: 'http://p154.ru/images/protect-catalog-1024x1024_1/item/i3vul3bomm.jpg',
+                        title: "Трубы ТЕХСТРОЙ TR"
                     }
                 ]
             }
