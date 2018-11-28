@@ -1,6 +1,6 @@
 <template>
     <v-toolbar  :scroll-toolbar-off-screen="true">
-        <v-toolbar-side-icon></v-toolbar-side-icon>
+        <v-toolbar-side></v-toolbar-side>
         <!--<v-toolbar-title>Title</v-toolbar-title>-->
         <!--<v-spacer></v-spacer>-->
         <v-container grid-list-md text-xs-center>

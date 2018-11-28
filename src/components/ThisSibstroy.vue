@@ -3,7 +3,7 @@
         <v-flex xs4>
             <v-card>
                 <v-img
-                        src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+                        srcset="./this1.jpg"
                         height="200px"
                 >
                 </v-img>
