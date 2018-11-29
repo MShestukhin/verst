@@ -1,6 +1,6 @@
 <template>
     <yandex-map
-            :coords="[52.286387, 104.280660]"
+            :coords="[52.282701, 104.330454]"
             zoom="15"
             style="width: 600px; height: 600px;"
             :cluster-options="{
@@ -13,14 +13,14 @@
     @map-was-initialized="initHandler"
     >
 
-    <!--<ymap-marker-->
-            <!--marker-type="placemark"-->
-            <!--:coords="[52.285263, 104.292814]"-->
-            <!--hint-content="Hint content 1"-->
-            <!--:balloon="{header: 'header', body: 'body', footer: 'footer'}"-->
-            <!--:icon="{color: 'green', glyph: 'cinema'}"-->
-            <!--cluster-name="1"-->
-    <!--&gt;</ymap-marker>-->
+    <ymap-marker
+            marker-type="placemark"
+            :coords="[52.282701, 104.330454]"
+            hint-content="Hint content 1"
+            :balloon="{header: 'header', body: 'body', footer: 'footer'}"
+            :icon="{color: 'red'}"
+            cluster-name="1"
+    ></ymap-marker>
 
     <!--<ymap-marker-->
             <!--marker-type="placemark"-->
@@ -51,7 +51,7 @@
             return {
                 placemarks: [
                     {
-                        coords: [52.285263, 104.292814],
+                        coords: [52.286387, 104.280660],
                         properties: {}, // define properties here
                         options: {}, // define options here
                         clusterName: "1",
