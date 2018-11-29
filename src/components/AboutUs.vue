@@ -1,54 +1,48 @@
 <template>
     <div class="text-xs-center">
-        <v-dialog
-                v-model="dialog"
-                width="500"
-        >
+        <v-bottom-sheet v-model="sheet">
             <v-btn
                     slot="activator"
-                    color="red lighten-2"
+                    color="purple"
                     dark
             >
                 Наши контакты
             </v-btn>
 
-            <v-card>
-                <v-card-title
-                        class="headline grey lighten-2"
-                        primary-title
+            <v-list>
+                <v-subheader>Контанкты</v-subheader>
+                <v-list-tile
+                        v-for="tile in tiles"
+                        :key="tile.title"
+                        @click="sheet = false"
                 >
-                    Privacy Policy
-                </v-card-title>
-
-                <v-card-text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </v-card-text>
-
-                <v-divider></v-divider>
-
-                <v-card-actions>
-                    <v-spacer></v-spacer>
-                    <v-btn
-                            color="primary"
-                            flat
-                            @click="dialog = false"
-                    >
-                        I accept
-                    </v-btn>
-                </v-card-actions>
-            </v-card>
-        </v-dialog>
+                    <!--<v-list-tile-avatar>-->
+                        <!--<v-avatar size="32px" tile>-->
+                            <!--<img-->
+                                    <!--:src="`https://cdn.vuetifyjs.com/images/bottom-sheets/${tile.img}`"-->
+                                    <!--:alt="tile.title"-->
+                            <!--&gt;-->
+                        <!--</v-avatar>-->
+                    <!--</v-list-tile-avatar>-->
+                    <v-list-tile-title>{{ tile.title }}</v-list-tile-title>
+                </v-list-tile>
+            </v-list>
+        </v-bottom-sheet>
     </div>
 </template>
-
 <script>
     export default {
         name: "AboutUs",
-        data () {
-            return {
-                dialog: false
-            }
-        }
+        data: () => ({
+            sheet: false,
+            tiles: [
+                { img: 'keep.png', title: 'Keep' },
+                { img: 'inbox.png', title: 'Inbox' },
+                { img: 'hangouts.png', title: 'Hangouts' },
+                { img: 'messenger.png', title: 'Messenger' },
+                { img: 'google.png', title: 'Google+' }
+            ]
+        })
     }
 </script>
 

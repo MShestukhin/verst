@@ -3,47 +3,6 @@
                 height="auto"
                 dark
         >
-            <!--<v-card-->
-                    <!--flat-->
-                    <!--tile-->
-                    <!--class="indigo lighten-1 white&#45;&#45;text text-xs-center"-->
-            <!--&gt;-->
-                <!--<v-card-text class="white&#45;&#45;text pt-0">-->
-                    <!--<v-layout align-center justify-space-around row fill-height>-->
-                        <!--<v-flex xs4>-->
-                            <!--<h3>jjj</h3>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                        <!--</v-flex>-->
-                        <!--<v-flex xs4>-->
-                            <!--<h3>jjj</h3>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                        <!--</v-flex>-->
-                        <!--<v-flex xs4>-->
-                            <!--<h3>jjj</h3>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                        <!--</v-flex>-->
-                        <!--<v-flex xs4>-->
-                            <!--<h3>jjj</h3>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                            <!--<p class="text-xs-center">Center align on medium viewport sizes</p>-->
-                        <!--</v-flex>-->
-                    <!--</v-layout>-->
-
-                    <!--&lt;!&ndash;Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.&ndash;&gt;-->
-                <!--</v-card-text>-->
-
-                <!--<v-divider></v-divider>-->
             <v-layout align-center justify-space-between column>
                 <v-flex xs3>
                     <v-layout align-center justify-space-around row fill-height>
@@ -98,7 +57,7 @@
                 </v-flex>
                 <v-flex xs3>
                     <v-card-text class="white--text">
-                        &copy;2018 — <strong>Vuetify</strong>
+                        &copy;2018 — <strong>Сибстрой</strong>
                     </v-card-text>
                 </v-flex>
             </v-layout>

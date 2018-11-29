@@ -13,11 +13,11 @@
 
                             <v-card-title primary-title>
                                 <div>
-                                    <h3 class="headline mb-0">{{item.title}}</h3>
+                                    <h3 class="headline mb-4">{{item.title}}</h3>
                                 </div>
                                 <v-card-actions>
-                                    <v-btn flat color="orange">Share</v-btn>
-                                    <v-btn flat color="orange">Explore</v-btn>
+                                    <v-btn flat color="orange">Подробнее</v-btn>
+                                    <v-btn flat color="orange">Скачать прайс</v-btn>
                                 </v-card-actions>
                             </v-card-title>
 
@@ -35,7 +35,7 @@
                 items: [
                     {
                         src: 'https://sdelanounas.ru/i/d/3/d/d3d3LnNkZWxhbm91bmFzLnJ1L3VwbG9hZHMvNi81LzY1NjE0MjQzNzE4NjVfb3JpZy5qcGVnP19faWQ9NTcwMzE=.jpg',
-                        title: "Многослойные трубы \"МультиТех\""
+                        title: "Заводы по производству труб"
                     },
                     {
                         src: 'http://optimapipe.ru/images/w689-h345/20180627/3a0456431aaac0aec313168ebc606ed7.jpg',

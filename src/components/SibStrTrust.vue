@@ -1,3 +1,4 @@
+
 <template>
     <v-jumbotron
             height="150px"
@@ -8,8 +9,7 @@
         <v-container fill-height :fill-height="true">
             <v-layout align-center>
                 <v-flex text-xs-center>
-                    <h3 class="display-3">Сезонная распродажа фитингов</h3>
-                    <span class="grey--text">Нажмите и ознакомтесь с прайс-листом</span><br>
+                    <h3 class="display-1">Трубы СИБСТРОЙ - надежность инженерных сетей!</h3>
                 </v-flex>
             </v-layout>
         </v-container>
@@ -18,9 +18,9 @@
 
 <script>
     export default {
-        name: "SisonSeil",
+        name: "SibStrTrust",
         data: () => ({
-            gradient: 'to top right, rgba(166, 61, 61, .7), rgba(25,32,72, .7)'
+            gradient: 'to top right, rgba(12, 23, 240, .5), rgba(42, 31, 196, .7)'
         })
     }
 </script>

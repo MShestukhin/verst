@@ -49,7 +49,7 @@
             <ThisSibstroy/>
           </v-flex>
         </v-layout>
-        <SisonSeil/>
+        <SibStrTrust/>
       </v-container>
 
       <v-container grid-list-md text-xs-center>
@@ -90,9 +90,11 @@ import SisonSeil from "./components/SisonSeil";
 import UsTrusted from "./components/UsTrusted";
 import YundexMap from "./components/YundexMap";
 import AboutUs from "./components/AboutUs";
+import SibStrTrust from "./components/SibStrTrust";
 export default {
   name: 'App',
   components: {
+      SibStrTrust,
       AboutUs,
       YundexMap,
       UsTrusted,

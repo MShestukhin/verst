@@ -3,7 +3,8 @@
         <v-toolbar-side></v-toolbar-side>
         <!--<v-toolbar-title>Title</v-toolbar-title>-->
         <!--<v-spacer></v-spacer>-->
-        <v-container grid-list-md text-xs-center>
+        <v-layout align-center justify-center row fill-height>
+        <v-container grid-list-xs    text-xs-center>
         <v-toolbar-items class="hidden-sm-and-down">
             <v-btn
                     v-for="link in links"
@@ -16,6 +17,7 @@
             </v-btn>
         </v-toolbar-items>
         </v-container>
+        </v-layout>
     </v-toolbar>
 </template>
 
@@ -24,12 +26,14 @@
         name: "Header",
         data: () => ({
             links: [
-                'Home',
-                'About Us',
-                'Team',
-                'Services',
-                'Blog',
-                'Contact Us'
+                'Главная',
+                'Продукция',
+                'Услуги',
+                'Производство',
+                'Прайс-листы',
+                'Пресс-центр',
+                'О компании',
+                'Контакты'
             ]
         })
     }
