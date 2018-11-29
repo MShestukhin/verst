@@ -30,7 +30,7 @@
 
       <v-container grid-list-md text-xs-center>
         <div class="row centered">
-          <h1>Техстрой в цифрах</h1>
+          <h1>Сибстрой в цифрах</h1>
         </div>
         <p/>
         <v-layout align-center justify-space-around row fill-height>
@@ -42,7 +42,7 @@
 
       <v-container grid-list-md text-xs-center>
         <div class="row centered">
-            <h1>Техстрой это:</h1>
+            <h1>Сибстрой это:</h1>
         </div>
         <v-layout align-center justify-center>
           <v-flex  d-flex xs16>
