@@ -1,114 +1,80 @@
 <template>
-  <v-app>
-    <Header/>
-
+  <v-app id="inspire" dark>
+    <v-navigation-drawer
+            v-model="drawer"
+            clipped
+            fixed
+            app
+    >
+      <v-list dense>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>dashboard</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Dashboard</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="">
+          <v-list-tile-action>
+            <v-icon>settings</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Settings</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+    <v-toolbar app fixed clipped-left>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-title>Application</v-toolbar-title>
+    </v-toolbar>
     <v-content>
-
-      <v-container fluid >
-        <v-layout align-center justify-center>
-          <v-flex  d-flex xs8 align-center justify-center>
-            <Carousels/>
-          </v-flex>
-        </v-layout>
-      </v-container>
-
-      <v-container fluid >
-      <v-layout align-center justify-center>
-        <v-flex  d-flex xs10>
-          <ItemGroups/>
-        </v-flex>
-      </v-layout>
-      </v-container>
-      <SisonSeil/>
-      <v-container fluid>
-        <v-layout align-center justify-center>
-          <v-flex  d-flex xs10>
-            <Texts/>
-          </v-flex>
-        </v-layout>
-      </v-container>
-
-      <v-container grid-list-md text-xs-center>
-        <div class="row centered">
-          <h1>Сибстрой в цифрах</h1>
-        </div>
-        <p/>
-        <v-layout align-center justify-space-around row fill-height>
-          <v-flex  d-flex xs16>
-            <SibStroyNumb/>
-          </v-flex>
-        </v-layout>
-      </v-container>
-
-      <v-container grid-list-md text-xs-center>
-        <div class="row centered">
-            <h1>Сибстрой это:</h1>
-        </div>
-        <v-layout align-center justify-center>
-          <v-flex  d-flex xs16>
-            <ThisSibstroy/>
-          </v-flex>
-        </v-layout>
-        <SibStrTrust/>
-      </v-container>
-
-      <v-container grid-list-md text-xs-center>
-        <div class="row centered">
-          <h1>Нам доверяют</h1>
-        </div>
-        <v-layout align-center justify-center>
-          <v-flex  d-flex xs16>
-            <UsTrusted/>
-          </v-flex>
-        </v-layout>
-      </v-container>
-
-    <v-container grid-list-md text-xs-center>
-      <about-us/>
-      <v-layout align-center justify-center>
-        <v-flex  d-flex xs16>
-          <YundexMap/>
-        </v-flex>
-      </v-layout>
-    </v-container>
+      <!--<v-layout align-content-center justify-center column>-->
+        <!--<v-flex xs12>-->
+          <carousels/>
+        <!--</v-flex>-->
+      <!--</v-layout>-->
+      <!--<v-container fluid fill-height>-->
+        <!--<v-layout justify-center align-center>-->
+          <!--<v-flex shrink>-->
+            <!--<v-tooltip right>-->
+              <!--<v-btn-->
+                      <!--slot="activator"-->
+                      <!--:href="source"-->
+                      <!--icon-->
+                      <!--large-->
+                      <!--target="_blank"-->
+              <!--&gt;-->
+                <!--<v-icon large>code</v-icon>-->
+              <!--</v-btn>-->
+              <!--<span>Source</span>-->
+            <!--</v-tooltip>-->
+            <!--<v-tooltip right>-->
+              <!--<v-btn slot="activator" icon large href="https://codepen.io/johnjleider/pen/qxQWda" target="_blank">-->
+                <!--<v-icon large>mdi-codepen</v-icon>-->
+              <!--</v-btn>-->
+              <!--<span>Codepen</span>-->
+            <!--</v-tooltip>-->
+          <!--</v-flex>-->
+        <!--</v-layout>-->
+      <!--</v-container>-->
     </v-content>
-
-    <Footer/>
+    <v-footer app fixed>
+      <span>&copy; 2017</span>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Carousels from "./components/carousels";
-import ItemGroups from "./components/ItemGroups";
-import Texts from "./components/Texts";
-import SibStroyNumb from "./components/SibStroyNumb";
-import ThisSibstroy from "./components/ThisSibstroy";
-import SisonSeil from "./components/SisonSeil";
-import UsTrusted from "./components/UsTrusted";
-import YundexMap from "./components/YundexMap";
-import AboutUs from "./components/AboutUs";
-import SibStrTrust from "./components/SibStrTrust";
-export default {
-  name: 'App',
-  components: {
-      SibStrTrust,
-      AboutUs,
-      YundexMap,
-      UsTrusted,
-      SisonSeil,
-      ThisSibstroy,
-      SibStroyNumb,
-      Texts,
-      ItemGroups,
-      Carousels,
-      Header,
-      Footer,
-      HelloWorld
-  },
-  data () {
-  }
-}
+    import Carousels from "./components/carousels";
+    export default {
+        components: {Carousels},
+        data: () => ({
+            drawer: null
+        }),
+        props: {
+            source: String
+        }
+    }
 </script>

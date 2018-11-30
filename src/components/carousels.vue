@@ -1,29 +1,30 @@
 <template>
-        <v-carousel hide-delimiters :interval="8000">
+        <v-carousel hide-delimiters :interval="8000" height="700" cycle="false">
             <v-carousel-item
                     v-for="(item,i) in items"
                     :key="i"
+                    :src="item.src"
             >
-                <!--<v-layout>-->
-                        <v-card>
-                            <v-img
-                                    :src="item.src"
-                                    aspect-ratio="2.75"
-                            ></v-img>
 
-                            <v-card-title primary-title>
-                                <div>
-                                    <h3 class="headline mb-4">{{item.title}}</h3>
-                                </div>
-                                <v-card-actions>
-                                    <v-btn flat color="orange">Подробнее</v-btn>
-                                    <v-btn flat color="orange">Скачать прайс</v-btn>
-                                </v-card-actions>
-                            </v-card-title>
-
-                        </v-card>
-                <!--</v-layout>-->
+                <!--<v-img-->
+                        <!--:src="item.src"-->
+                <!--&gt;</v-img>-->
+                <v-layout align-end justify-start row fill-height>
+                <v-card max-height  max-width
+                >
+                    <v-card-title primary-title>
+                        <div>
+                            <h3 class="headline mb-0">{{item.title}}</h3>
+                        </div>
+                        <v-card-actions>
+                            <v-btn flat color="orange">Подробнее</v-btn>
+                            <v-btn flat color="orange">Скачать прайс</v-btn>
+                        </v-card-actions>
+                    </v-card-title>
+                </v-card>
+                </v-layout>
             </v-carousel-item>
+
         </v-carousel>
 </template>
 
