@@ -1,4 +1,12 @@
 <template>
+<<<<<<< HEAD
+    <v-toolbar :scroll-toolbar-off-screen="true">
+        <v-toolbar-side></v-toolbar-side>
+        <!--<v-toolbar-title>Title</v-toolbar-title>-->
+        <!--<v-spacer></v-spacer>-->
+        <!-- <v-layout align-center justify-space-around row fill-height> -->
+        <v-container grid-list-xs    text-xs-center>
+=======
     <v-toolbar  :scroll-toolbar-off-screen="true">
         <!--<v-toolbar-title>Title</v-toolbar-title>-->
         <!--<v-spacer></v-spacer>-->
@@ -8,6 +16,7 @@
                 <v-toolbar-title class="black--text">Title</v-toolbar-title>
             </v-toolbar-items>
             <v-spacer></v-spacer>
+>>>>>>> 262e3c3016c611ac81f334b95edcb122d285dd92
         <v-toolbar-items class="hidden-sm-and-down">
             <v-btn
                     v-for="link in links"
@@ -19,7 +28,12 @@
                 {{ link }}
             </v-btn>
         </v-toolbar-items>
+<<<<<<< HEAD
+        </v-container>
+        <!-- </v-layout> -->
+=======
         </v-layout>
+>>>>>>> 262e3c3016c611ac81f334b95edcb122d285dd92
     </v-toolbar>
 </template>
 
