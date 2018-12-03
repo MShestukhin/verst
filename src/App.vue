@@ -11,7 +11,7 @@
           <v-menu open-on-hover right offset-x>
           <v-list-tile slot="activator" @click="">
             <v-list-tile-action>
-              <v-icon>dashboard</v-icon>
+              <v-icon>{{service.icon}}</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{service.name}}</v-list-tile-title>
@@ -105,6 +105,7 @@
             drawer: false,
             services: [
                 {name:"Водоснабжение",
+                    icon: "invert_colors",
                     items: [
                         { title: 'Трубы из ПЭ 80, ПЭ 100, ПЭ 100+',
                           avatar: 'http://www.polyplastic.ru/upload/production/menu/gost_water.jpg'},
@@ -117,6 +118,7 @@
                             avatar: 'http://www.polyplastic.ru/upload/production/menu/protect_water.jpg'}
                     ]},
                 {name:"Водоотведение",
+                    icon: "format_color_reset",
                     items: [
                         { title: 'Система трубопроводов из НПВХ',
                             avatar: 'http://www.polyplastic.ru/upload/production/menu/Npvh_Wp.jpg'},
@@ -132,6 +134,7 @@
                             avatar: 'http://www.polyplastic.ru/upload/production/menu/perfocore.jpg'}
                     ]},
                 {name:"Газораспределение",
+                    icon: "local_gas_station",
                     items: [
                         { title: 'Трубы из ПЭ 80, ПЭ 100; ТУ и ГОСТ',
                             avatar: 'http://www.polyplastic.ru/upload/production/menu/gost_gas.jpg'},
@@ -145,10 +148,10 @@
                                 'МУЛЬТИПАЙП III',
                             avatar: 'http://www.polyplastic.ru/upload/production/menu/fitingi_gaz.png'}
                     ]},
-                {name:"Кабелезащита"},
-                {name:"Решение для промышленности"},
-                {name:"Запорно-регулирующая арматура"},
-                {name:"Оборудование для сварки ПЭ труб"},
+                {name:"Кабелезащита", icon: "offline_bolt"},
+                {name:"Решение для промышленности",icon: "restore_from_trash"},
+                {name:"Запорно-регулирующая арматура",icon: "sync"},
+                {name:"Оборудование для сварки ПЭ труб",icon: "whatshot"},
             ],
             items: [
                 { title: 'Click Me' },

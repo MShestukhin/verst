@@ -2,14 +2,9 @@
 <<<<<<< HEAD
     <v-toolbar :scroll-toolbar-off-screen="true">
         <v-toolbar-side></v-toolbar-side>
-        <!--<v-toolbar-title>Title</v-toolbar-title>-->
-        <!--<v-spacer></v-spacer>-->
-        <!-- <v-layout align-center justify-space-around row fill-height> -->
         <v-container grid-list-xs    text-xs-center>
 =======
     <v-toolbar  :scroll-toolbar-off-screen="true">
-        <!--<v-toolbar-title>Title</v-toolbar-title>-->
-        <!--<v-spacer></v-spacer>-->
         <v-layout align-center justify-center row >
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-toolbar-side-icon></v-toolbar-side-icon>
