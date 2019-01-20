@@ -3,7 +3,7 @@ import './plugins/vuetify'
 import App from './App.vue'
 import Router from 'vue-router'
 import Main from './components/Main.vue'
-import  HelloWorld from './components/HelloWorld'
+import  HelloWorld from './components/PdfViewver'
 // register globally
 import YmapPlugin from 'vue-yandex-maps'
 Vue.use(YmapPlugin)
