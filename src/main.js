@@ -3,7 +3,7 @@ import './plugins/vuetify'
 import App from './App.vue'
 import Router from 'vue-router'
 import Main from './components/Main.vue'
-import  HelloWorld from './components/PdfViewver'
+import  HelloWorld from './components/More'
 // register globally
 import YmapPlugin from 'vue-yandex-maps'
 Vue.use(YmapPlugin)
@@ -14,13 +14,13 @@ const router = new Router({
         {
             path: '/',
             name:'home',
-            component: Main,
+            component: Main
         },
         {
-            path: '/post',
+            path: '/post/:title',
             name:'post',
             component: HelloWorld,
-            props: true,
+            props: true
         },
     ]
 })

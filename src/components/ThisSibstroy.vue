@@ -10,7 +10,7 @@
 
                 <v-card-title primary-title>
                     <div>
-                        <div class="headline">Оперативность</div>
+                        <v-toolbar-title class="orange--text">Оперативность</v-toolbar-title>
                         <span class="grey--text">Наличие собственных 3 крупнейших заводов и масштабная сеть региональных складов и представительств</span>
                     </div>
                 </v-card-title>
@@ -26,7 +26,8 @@
 
                 <v-card-title primary-title>
                     <div>
-                        <div class="headline">Надежность</div>
+                        <!--<div class="orange&#45;&#45;text">Надежность</div>-->
+                        <v-toolbar-title class="orange--text">Надежность</v-toolbar-title>
                         <span class="grey--text">Продукция прошедшая авторизованные лабораторные испытания, доверие крупнейших потребителей и партнеров</span>
                     </div>
                 </v-card-title>
@@ -42,7 +43,7 @@
 
                 <v-card-title primary-title>
                     <div>
-                        <div class="headline">Качество</div>
+                        <v-toolbar-title class="orange--text">Качество</v-toolbar-title>
                         <span class="grey--text">Самый современный производственный комплекс в Европе, инновационное оборудование, сырье лучших мировых брендов</span>
                     </div>
                 </v-card-title>

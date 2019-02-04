@@ -1,47 +1,4 @@
 <template>
-    <v-app id="inspire" dark>
-        <v-navigation-drawer
-                v-model="drawer"
-                clipped
-                fixed
-                app
-        >
-            <v-list dense>
-                <template v-for="(service, index) in services">
-                    <v-menu open-on-hover right offset-x>
-                        <v-list-tile slot="activator" @click="">
-                            <v-list-tile-action>
-                                <v-icon>{{service.icon}}</v-icon>
-                            </v-list-tile-action>
-                            <v-list-tile-content>
-                                <v-list-tile-title>{{service.name}}</v-list-tile-title>
-                            </v-list-tile-content>
-                        </v-list-tile>
-
-                        <v-list v-if="service.items">
-                            <v-list-tile
-                                    v-for="(item, index) in service.items"
-                                    :key="index"
-                                    @click="back(index)"
-                            >
-                                <v-list-tile-avatar>
-                                    <img :src="item.avatar">
-                                </v-list-tile-avatar>
-                                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                            </v-list-tile>
-                        </v-list>
-                    </v-menu>
-
-                </template>
-
-            </v-list>
-        </v-navigation-drawer>
-        <v-toolbar app fixed clipped-left>
-            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-title>Сибтрейд</v-toolbar-title>
-        </v-toolbar>
-
-        <v-content>
             <v-layout align-content-center justify-center column>
                 <v-flex xs12>
                     <carousels/>
@@ -78,11 +35,10 @@
                         </v-flex>
                         <!--</v-layout>-->
                     </v-container>
-                    <my-footer/>
+                    <!--<my-footer/>-->
 
                 </v-flex>
             </v-layout>
-        </v-content>
         <!--<v-footer app fixed>-->
         <!--<span>&copy; 2017</span>-->
         <!--</v-footer>-->
@@ -167,8 +123,8 @@
         methods: {
             back(v){
                 console.log(v);
-                var pdf = 'https://vk.com/doc94640760_488211554?hash=8e237b1dad85b1fbde&dl=0ee5582c92f973ff1d';
-                window.open(pdf);
+                // var pdf = 'https://vk.com/doc94640760_488211554?hash=8e237b1dad85b1fbde&dl=0ee5582c92f973ff1d';
+                // window.open(pdf);
                 //  this.$router.replace({ path: 'post' });
             }
         }

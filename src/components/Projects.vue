@@ -1,7 +1,7 @@
 <template>
             <v-card>
                 <v-toolbar color="gray" dark>
-                    <v-toolbar-title>Проекты</v-toolbar-title>
+                    <v-toolbar-title class="orange--text">Проекты</v-toolbar-title>
                 </v-toolbar>
                 <v-layout row>
                     <v-flex xs6>

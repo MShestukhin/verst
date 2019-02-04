@@ -36,11 +36,10 @@
         data: () => ({
             sheet: false,
             tiles: [
-                { img: 'keep.png', title: 'Адрес:' },
-                { img: 'inbox.png', title: 'Телефон:' },
-                { img: 'hangouts.png', title: 'Mail:' },
-                { img: 'messenger.png', title: 'VK:' },
-                { img: 'google.png', title: 'Facebook:' }
+                { img: 'keep.png', title: 'Адрес: 664009 г.Иркутск, ул.Красноярская, 11А, оф.409, бизнес-центр "777" адрес склада 664528, г.Иркутск, ул.Фролова, 1/3' },
+                { img: 'inbox.png', title: 'Телефон: +73952455060' },
+                { img: 'hangouts.png', title: 'Mail: dir@sibtrade.info' },
+                { img: 'messenger.png', title: 'Вконтакте: https://vk.com/club173262752' }
             ]
         })
     }

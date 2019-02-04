@@ -18,13 +18,12 @@
                         </div>
                         <v-card-actions>
                             <v-btn flat color="orange">Подробнее</v-btn>
-                            <v-btn flat color="orange">Скачать прайс</v-btn>
+                            <v-btn flat v-if=item.download color="orange" @click="back(item.link_price)">Скачать прайс</v-btn>
                         </v-card-actions>
                     </v-card-title>
                 </v-card>
                 </v-layout>
             </v-carousel-item>
-
         </v-carousel>
 </template>
 
@@ -36,33 +35,54 @@
                 items: [
                     {
                         src: 'https://sdelanounas.ru/i/d/3/d/d3d3LnNkZWxhbm91bmFzLnJ1L3VwbG9hZHMvNi81LzY1NjE0MjQzNzE4NjVfb3JpZy5qcGVnP19faWQ9NTcwMzE=.jpg',
-                        title: "Заводы по производству труб"
+                        title: "Завод \"ТЕХСТРОЙ\" по производству труб",
+                        download:false
                     },
                     {
                         src: 'http://optimapipe.ru/images/w689-h345/20180627/3a0456431aaac0aec313168ebc606ed7.jpg',
-                        title:"Многослойные трубы \"МультиТех\""
+                        title:"Многослойные трубы \"МультиТех\"",
+                        download:true,
+                        link_price:'Truba_Multitekh.pdf'
                     },
                     {
                         src: 'https://www.calc.ru/imgs/articles3/15/04/68857256fef30289d393.76730355.jpg',
-                        title:"Гофрированная труба"
+                        title:"Гофрированная труба",
+                        download:true,
+                        link_price:'Truba_gofr_bez_NDS.pdf'
                     },
                     {
                         src: 'http://optimapipe.ru/images/w689-h345/20150605/dd5d954f27e4a37754bbb83a4fb3a0e5.JPG',
-                        title: "ТРУБЫ PROSAFE"
+                        title: "ТРУБЫ PROSAFE",
+                        download:true,
+                        link_price:'Truba_voda_PE100_prosafe.pdf'
                     },
                     {
                         src: 'https://www.germesgroup.com/Product/IMG_3694.jpg',
-                        title: "Спиральновитые трубы"
+                        title: "Спиральновитые трубы",
+                        download:true,
+                        link_price:'Truba_SVT.pdf'
                     },
                     {
-                        src: 'http://innoformula.ru/thumb/0tjZOuKzWC7oVxIqSSIILw/580r450/1620328/fitingi.jpg',
-                        title: "Фитинги и запорная арматура"
+                        src: 'http://www.sibkomplekt.org/sites/default/files/fitingi_elektrosvarnye_0.jpg',
+                        title: "Фитинги и запорная арматура",
+                        download:true,
+                        link_price:''
                     },
                     {
                         src: 'http://p154.ru/images/protect-catalog-1024x1024_1/item/i3vul3bomm.jpg',
-                        title: "Трубы ТЕХСТРОЙ TR"
+                        title: "Трубы ТЕХСТРОЙ TR",
+                        download:true,
+                        link_price:'PE-RT_20183.pdf'
                     }
                 ]
+            }
+        },
+        methods: {
+            back(v){
+                if(v!='') {
+                    var pdf = location.protocol + "//" + location.host+'/static/' + v;
+                    window.open(pdf);
+                }
             }
         }
     }

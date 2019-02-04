@@ -57,7 +57,7 @@
                 </v-flex>
                 <v-flex xs3>
                     <v-card-text class="white--text">
-                        &copy;2018 — <strong>Сибстрой</strong>
+                        &copy;2018 — <strong>Сибтрейд</strong>
                     </v-card-text>
                 </v-flex>
             </v-layout>
