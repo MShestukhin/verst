@@ -26,8 +26,7 @@
                 <!--</v-layout>-->
             <!--</v-flex>-->
             <!--</v-flex>-->
-        <v-card-text>
-            {{ dsc }}
+        <v-card-text v-html="checkDsc">
         </v-card-text>
 
         <v-card-actions>
@@ -50,7 +49,17 @@
     export default {
         name: "More",
         props: ['title','dsc'],
-        components: {Carousels}
+        components: {Carousels},
+        computed : {
+            checkDsc: function () {
+                if(this.dsc){
+                    return this.dsc;
+                }
+                else{
+                    this.$router.replace({ name: 'home'});
+                }
+            }
+        }
     }
 </script>
 
