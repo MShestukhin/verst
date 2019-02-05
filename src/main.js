@@ -17,7 +17,7 @@ const router = new Router({
             component: Main
         },
         {
-            path: '/post/:title',
+            path: '/post/:link',
             name:'post',
             component: HelloWorld,
             props: true

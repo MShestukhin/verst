@@ -1,25 +1,27 @@
 <template>
     <v-layout align-content-center justify-center column>
     <!--<v-card>-->
-        <v-container grid-list-xs text-xs-center >
+        <!--<v-container grid-list-xs text-xs-center >-->
         <!--<v-flex xs12>-->
             <v-container>
-            <v-toolbar
-                    card
-                    color="orange"
-                    dark
-                    dense
-            >
-            <v-toolbar-title class="body-4">{{ title }}</v-toolbar-title>
-            </v-toolbar>
-        </v-container>
+            <!--<v-toolbar-->
+                    <!--card-->
+                    <!--color="orange"-->
+                    <!--dark-->
+                    <!--dense-->
+            <!--&gt;-->
+                <!--<v-toolbar-title class="body-4">-->
+                    <v-chip color="orange" text-color="white"><h1>{{ title }}</h1></v-chip>
+                <!--</v-toolbar-title>-->
+            <!--</v-toolbar>-->
+        <!--</v-container>-->
         <!--</v-flex>-->
             <!--<v-flex  xs12>-->
                 <!--<v-layout d-flex>-->
                 <v-container>
                 <v-img
-                        src='http://www.polyplastic.ru/upload/production/menu/gost_water.jpg'
-                        height="400px"
+                        :src="img"
+                        height="500px"
                 >
                 </v-img>
                 </v-container>
@@ -48,10 +50,16 @@
     import Carousels from "./carousels";
     export default {
         name: "More",
-        props: ['title','dsc'],
+        props: ['title','dsc','link'],
         components: {Carousels},
+        data: function(){
+            return {
+                img: location.protocol + "//" + location.host + '/static/img/' + this.link + '.jpg'
+            }
+        },
         computed : {
             checkDsc: function () {
+                this.img=location.protocol + "//" + location.host + '/static/img/' + this.link + '.jpg';
                 if(this.dsc){
                     return this.dsc;
                 }
