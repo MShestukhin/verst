@@ -35,7 +35,7 @@
                 items: [
                     {
                         src: 'https://sdelanounas.ru/i/d/3/d/d3d3LnNkZWxhbm91bmFzLnJ1L3VwbG9hZHMvNi81LzY1NjE0MjQzNzE4NjVfb3JpZy5qcGVnP19faWQ9NTcwMzE=.jpg',
-                        title: "Завод \"Сибтрейд\" по производству труб",
+                        title: "Завод \"Техстрой\" по производству труб",
                         download:false
                     },
                     {
@@ -70,7 +70,7 @@
                     },
                     {
                         src: 'http://p154.ru/images/protect-catalog-1024x1024_1/item/i3vul3bomm.jpg',
-                        title: "Трубы Сибтрейд TR",
+                        title: "Трубы Техстрой TR",
                         download:true,
                         link_price:'PE-RT_20183.pdf'
                     }
