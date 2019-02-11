@@ -61,8 +61,38 @@
  <!--<Main></Main>-->
     <v-content>
       <router-view></router-view>
+        <v-container>
+          <v-menu  v-model="dialog" top offset-y :close-on-content-click="false">
+            <v-btn
+                    v-model="dialog"
+                    slot="activator"
+                    color="orange"
+                    fixed
+                    right
+                    bottom
+                    dark
+                    fab
+            >
+              <v-icon>edit</v-icon>
+              <v-icon>close</v-icon>
+            </v-btn>
+            <v-card>
+              <send-form/>
+            </v-card>
+          </v-menu>
+        </v-container>
     </v-content>
-      <my-footer/>
+    <!--<v-speed-dial-->
+            <!--v-model="dialog"-->
+            <!--open-on-hover-->
+            <!--top-->
+            <!--right-->
+            <!--fixed-->
+            <!--direction="bottom"-->
+            <!--:close-on-content-click="false"-->
+    <!--&gt;-->
+    <!--</v-speed-dial>-->
+    <my-footer/>
       <!--<v-footer app fixed>-->
           <!--<span>&copy; 2017</span>-->
         <!--</v-footer>-->
@@ -79,10 +109,23 @@
     import MyFooter from "./components/MyFooter";
     import News from "./components/News";
     import Projects from "./components/Projects";
+    import SendForm from "./components/SendForm";
     export default {
-        components: {Projects, News, MyFooter, Footer, AboutUs, ItemGroups, YundexMap, ThisSibstroy, Carousels},
+        components: {SendForm, Projects, News, MyFooter, Footer, AboutUs, ItemGroups, YundexMap, ThisSibstroy, Carousels},
+        computed: {
+            activeFab () {
+                switch (this.tabs) {
+                    case 'one': return { 'class': 'purple', icon: 'account_circle' }
+                    case 'two': return { 'class': 'red', icon: 'edit' }
+                    case 'three': return { 'class': 'green', icon: 'keyboard_arrow_up' }
+                    default: return {}
+                }
+            }
+        },
         data: () => ({
             drawer: false,
+            fab: false,
+            dialog: false,
             services: [
                 {name:"Водоснабжение",
                     icon: "invert_colors",
