@@ -375,16 +375,12 @@
                     link:'provider'
                 },
                 {
-                    name:'Производство',
-                    link:''
-                },
-                {
                     name:'Для проектировщиков',
-                    link:''
+                    link:'designer'
                 },
                 {
                     name:'О компании',
-                    link:''
+                    link:'company'
                 },
                 {
                     name:'Контакты',
@@ -397,6 +393,7 @@
         },
         methods: {
             back(title,dsc,link){
+                this.$vuetify.goTo(0);
                 console.log(link);
                 if(dsc){
                     this.$router.replace({ name: 'post', params: {title:title, dsc, link:link} });

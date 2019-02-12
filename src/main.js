@@ -7,6 +7,8 @@ import  HelloWorld from './components/More'
 import  Provider from './components/Provider'
 import  Product from './components/Product'
 import  Contacts from './components/Contacts'
+import  Company from './components/Company'
+import  Designer from './components/Designer'
 // register globally
 import YmapPlugin from 'vue-yandex-maps'
 Vue.use(YmapPlugin)
@@ -41,6 +43,18 @@ const router = new Router({
             path: '/contacts',
             name:'contacts',
             component: Contacts,
+            props: true
+        },
+        {
+            path: '/company',
+            name:'company',
+            component: Company,
+            props: true
+        },
+        {
+            path: '/designer',
+            name:'designer',
+            component: Designer,
             props: true
         },
     ]
