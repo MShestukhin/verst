@@ -43,11 +43,11 @@
                     v-for="link in links"
                     :key="link"
                     color="orange"
-                    @click="back()"
+                    @click="back(link.name,'',link.link)"
                     flat
                     round
             >
-                {{ link }}
+                {{ link.name }}
             </v-btn>
         </v-toolbar-items>
       <v-spacer></v-spacer>
@@ -362,27 +362,49 @@
                 {name:"Оборудование для сварки ПЭ труб",icon: "whatshot",link: '',},
             ],
             links: [
-                'Главная',
-                'Продукция',
-                'Услуги',
-                'Производство',
-                'Для проектировщиков',
-                'О компании',
-                'Контакты'
+                {
+                    name:'Главная',
+                    link:''
+                },
+                {
+                    name:'Продукция',
+                    link:'product'
+                },
+                {
+                    name:'Услуги',
+                    link:'provider'
+                },
+                {
+                    name:'Производство',
+                    link:''
+                },
+                {
+                    name:'Для проектировщиков',
+                    link:''
+                },
+                {
+                    name:'О компании',
+                    link:''
+                },
+                {
+                    name:'Контакты',
+                    link:'contacts'
+                }
             ]
         }),
         props: {
             source: String
         },
         methods: {
-            back(c,dsc,l){
-                console.log(c);
+            back(title,dsc,link){
+                console.log(link);
                 if(dsc){
-                    this.$router.replace({ name: 'post', params: {title:c, dsc, link:l} });
+                    this.$router.replace({ name: 'post', params: {title:title, dsc, link:link} });
                     // this.$router.replace({path: 'post/'+c, props: {src, c, dsc}});
                     // this.$router.replace({path: '/post/'+c+'/'+dsc, component: More,  query: { plan: 'private' }});
-                }
-                else {
+                }else if(link){
+                    this.$router.replace({ name: link});
+                }else {
                     this.$router.replace({ name: 'home'});
                 }
                 // if(v!='') {
