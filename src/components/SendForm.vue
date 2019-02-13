@@ -1,8 +1,11 @@
 <template>
-    <form>
+    <form
+            ref="form">
+
         <v-text-field
                 v-model="name"
                 label="Имя"
+                :error-messages="nameErrors"
                 required
                 @input="$v.name.$touch()"
                 @blur="$v.name.$touch()"
@@ -10,7 +13,9 @@
 
         <v-text-field
                 v-model="phone"
-                label="Phone number"
+                :error-messages="phoneErrors"
+                required
+                label="Телефон"
                 mask="phone"
                 @input="$v.phone.$touch()"
                 @blur="$v.phone.$touch()"
@@ -46,23 +51,20 @@
         mixins: [validationMixin],
         name: "SendForm",
         validations: {
-            name: { required, maxLength: maxLength(10) },
-            select: { required },
-            checkbox: {
-                checked (val) {
-                    return val
-                }
-            }
+            name: { required },
+            phone: { required },
+            select: { required }
         },
         data: () => ({
+            valid: true,
             name: '',
             phone: '',
             select: null,
             items: [
-                'Item 1',
-                'Item 2',
-                'Item 3',
-                'Item 4'
+                'Водоснабжение',
+                'Водоотведение',
+                'Газораспределение',
+                'Трубы в теплоизоляции'
             ],
             checkbox: false
         }),
@@ -87,11 +89,11 @@
                 !this.$v.name.required && errors.push('Name is required.')
                 return errors
             },
-            emailErrors () {
+            phoneErrors () {
                 const errors = []
-                if (!this.$v.email.$dirty) return errors
-                !this.$v.email.email && errors.push('Must be valid e-mail')
-                !this.$v.email.required && errors.push('E-mail is required')
+                if (!this.$v.phone.$dirty) return errors
+                !this.$v.phone.phone && errors.push('Must be valid phone')
+                !this.$v.phone.required && errors.push('Phone is required')
                 return errors
             }
         },
@@ -104,7 +106,7 @@
             clear () {
                 this.$v.$reset()
                 this.name = ''
-                this.email = ''
+                this.phone = ''
                 this.select = null
                 this.checkbox = false
             }
