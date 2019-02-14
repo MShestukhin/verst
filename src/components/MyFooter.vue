@@ -60,7 +60,7 @@
             <!--</v-flex>-->
             <v-flex xs3>
                 <v-card-text class="orange--text">
-                    &copy;2018 — <strong>Сибтрейд</strong>
+                    &copy;2019 — <strong>Сибтрейд</strong>
                 </v-card-text>
             </v-flex>
         </v-layout>
