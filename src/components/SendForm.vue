@@ -47,6 +47,23 @@
 <script>
     import { validationMixin } from 'vuelidate'
     import { required, maxLength, email } from 'vuelidate/lib/validators'
+    // var nodemailer = require('nodemailer');
+    // const net = require('net');
+    // var transporter = nodemailer.createTransport({
+    //     service: 'gmail',
+    //     auth: {
+    //         user: 'sibtrade.tech@gmail.com',
+    //         pass: 'wz2egnb9'
+    //     }
+    // });
+    //
+    // var mailOptions = {
+    //     from: 'sibtrade.tech@gmail.com',
+    //     to: 'shist95@mail.ru',
+    //     subject: 'Sending Email using Node.js',
+    //     text: 'That was easy!'
+    // };
+
     export default {
         mixins: [validationMixin],
         name: "SendForm",
@@ -101,7 +118,13 @@
         methods: {
             submit () {
                 this.$v.$touch()
-
+                // transporter.sendMail(mailOptions, function(error, info){
+                //     if (error) {
+                //         console.log(error);
+                //     } else {
+                //         console.log('Email sent: ' + info.response);
+                //     }
+                // });
             },
             clear () {
                 this.$v.$reset()
