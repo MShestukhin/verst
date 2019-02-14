@@ -64,7 +64,7 @@
                     return this.dsc;
                 }
                 else{
-                    this.$router.replace({ name: 'home'});
+                    this.$router.push({ name: 'home'});
                 }
             }
         }

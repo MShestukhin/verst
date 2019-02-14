@@ -7,7 +7,7 @@
                     <v-flex xs6>
                         <v-container>
                             <v-img
-                                    src="http://www.polyplastic.ru/upload/projects/2018/grodno_1.jpg"
+                                    :src="imgGros"
                                     aspect-ratio="2.75"
                             ></v-img>
                             <v-card-title primary-title>
@@ -68,26 +68,21 @@
         name: "Projects",
         data() {
             return {
-                card_text: 'Очистные сооружения дождевых стоков на 270 л/с микрорайона «Южный-3»',
+                card_text: 'Участие в строительстве и поставке материалов для рудника Гросс',
+                imgGros: location.protocol + "//" + location.host + '/static/img/LA.jpg',
                 items: [
                     {header: 'Сегодня'},
                     {
-                        avatar: 'http://www.polyplastic.ru/upload/projects/2018/kombikormoviy_zavod_1-min.jpg',
-                        title: 'Строительство комбикормового завода ГК «АГРОЭКО»',
-                        subtitle: "Строительство комбикормового завода ГК «АГРОЭКО»"
-                    },
-                    {divider: true, inset: true},
-                    {
-                        avatar: 'http://www.polyplastic.ru/upload/projects/preview/collector_lipeck_prev-min.jpg',
-                        title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-                        subtitle: "Капитальный ремонт действующего канализационного коллектора в городе Липецке"
-                    },
-                    {divider: true, inset: true},
-                    {
-                        avatar: 'http://www.polyplastic.ru/upload/projects/2018/ekad_1.jpg',
-                        title: 'Oui oui',
-                        subtitle: "Строительство улиц № 1, № 3, № 7 для жилой застройки территории, ограниченной: коридор ВЛ- ул. 2-я Новосибирская – ЕКАД. Жилой район «Солнечный»"
-                    },
+                        avatar: location.protocol + "//" + location.host + '/static/img/RUD.jpg',
+                        title: 'Новый Ледовый Дворец',
+                        subtitle: "Строительство объекта \"Ледовая Арена\" в Иркутске"
+                    }
+                    // {divider: true, inset: true},
+                    // {
+                    //     avatar: 'http://www.polyplastic.ru/upload/projects/2018/ekad_1.jpg',
+                    //     title: 'Oui oui',
+                    //     subtitle: "Строительство улиц № 1, № 3, № 7 для жилой застройки территории, ограниченной: коридор ВЛ- ул. 2-я Новосибирская – ЕКАД. Жилой район «Солнечный»"
+                    // },
                 ]
             }
         }

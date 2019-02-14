@@ -125,7 +125,7 @@
                 console.log(v);
                 // var pdf = 'https://vk.com/doc94640760_488211554?hash=8e237b1dad85b1fbde&dl=0ee5582c92f973ff1d';
                 // window.open(pdf);
-                //  this.$router.replace({ path: 'post' });
+                //  this.$router.push({ path: 'post' });
             }
         }
     }
