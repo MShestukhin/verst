@@ -5,12 +5,18 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "start": "node ."
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "dns": "^0.2.2",
+    "express": "^4.16.4",
     "nodemailer": "^5.1.1",
     "vue": "^2.5.17",
+    "vue-axios": "^2.1.4",
     "vue-pdf": "^4.0.5",
     "vue-router": "^3.0.2",
     "vue-yandex-maps": "^0.7.15",

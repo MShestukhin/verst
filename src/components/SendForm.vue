@@ -21,24 +21,6 @@
                 @blur="$v.phone.$touch()"
         ></v-text-field>
 
-        <v-select
-                v-model="select"
-                :items="items"
-                :error-messages="selectErrors"
-                label="Услуга"
-                required
-                @change="$v.select.$touch()"
-                @blur="$v.select.$touch()"
-        ></v-select>
-
-            <v-textarea
-                    name="note"
-                    label="Комментарий"
-                    value=""
-                    @change="$v.note.$touch()"
-                    @blur="$v.note.$touch()"
-            ></v-textarea>
-
         <v-btn @click="submit">Отправить</v-btn>
         <v-btn @click="clear">Очистить</v-btn>
     </form>
@@ -47,6 +29,8 @@
 <script>
     import { validationMixin } from 'vuelidate'
     import { required, maxLength, email } from 'vuelidate/lib/validators'
+    import axios from 'axios'
+    import Vue from 'vue'
     // var nodemailer = require('nodemailer');
     // const net = require('net');
     // var transporter = nodemailer.createTransport({
@@ -117,14 +101,28 @@
 
         methods: {
             submit () {
-                this.$v.$touch()
-                // transporter.sendMail(mailOptions, function(error, info){
-                //     if (error) {
-                //         console.log(error);
-                //     } else {
-                //         console.log('Email sent: ' + info.response);
-                //     }
-                // });
+                this.$v.$touch();
+                axios.get('http://localhost:4444/', {
+                    method: 'GET',
+                    mode: 'no-cors',
+                    // headers: {
+                    //     'Access-Control-Allow-Origin': '*',
+                    //     'Access-Control-Allow-Origin': 'Origin',
+                    //     'Access-Control-Allow-Origin': 'X-Requested-With',
+                    //     'Access-Control-Allow-Origin': 'Content-Type',
+                    //     'Access-Control-Allow-Origin': 'Accept',
+                    //     'Content-Type': 'application/json'
+                    // },
+                    withCredentials: true,
+                    credentials: 'same-origin'
+                })
+                    .then(function (response) {
+                        console.log(response);
+                    })
+                    .catch(function (error) {
+                        console.log('tut');
+                        console.log(error);
+                    });
             },
             clear () {
                 this.$v.$reset()
