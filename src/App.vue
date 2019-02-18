@@ -1,5 +1,9 @@
 <template>
     <v-app id="inspire" dark>
+        <div
+                v-scroll="handleScroll"
+                class="box"
+        >
         <v-navigation-drawer
                 v-model="drawer"
                 color="grey"
@@ -56,16 +60,50 @@
             <v-spacer></v-spacer>
             <v-toolbar-items>
                 <v-list-tile-content>
-                    <v-list-tile-title><h2 style="color:orange">Телефон: +7 (3952) 45-50-60</h2></v-list-tile-title>
+                    <v-list-tile-title><h2 style="color:orange">Телефон: +7 (3952) 45-50-60 {{offsetTop}}</h2>
+                    </v-list-tile-title>
                     <v-list-tile-sub-title><h2 style="color:orange">Mail: dir@sibtrade.info</h2></v-list-tile-sub-title>
                 </v-list-tile-content>
             </v-toolbar-items>
         </v-toolbar>
         <!--<Main></Main>-->
         <v-content>
-            <router-view></router-view>
-            <v-container grid-list-md text-xs-center>
-                <v-menu v-model="dialog" top offset-y :close-on-content-click="false">
+                    <v-dialog
+                            v-model="snackbar"
+                            width="500"
+                    >
+
+                        <v-card>
+                            <v-card-title
+                                    class="headline orange"
+                                    primary-title
+                            >
+                                СибТрейд
+                            </v-card-title>
+
+                            <v-card-text>
+                                <h3>{{text}}</h3>
+                            </v-card-text>
+
+                            <v-divider></v-divider>
+
+                            <v-card-actions>
+                                <v-spacer></v-spacer>
+                                <v-btn
+                                        color="orange"
+                                        flat
+                                        @click="snackbar = false"
+                                >
+                                    Закрыть
+                                </v-btn>
+                            </v-card-actions>
+                        </v-card>
+                    </v-dialog>
+                    <router-view></router-view>
+                    <!--</v-card>-->
+                    <!--</v-menu>-->
+                <v-menu v-menu v-model="dialog" top offset-y :close-on-content-click="false">
+                    <send-form @snackbar_show="snackbar = true; dialog=false"/>
                     <v-btn
                             v-model="dialog"
                             slot="activator"
@@ -79,26 +117,12 @@
                         <v-icon>edit</v-icon>
                         <v-icon>close</v-icon>
                     </v-btn>
-                    <v-card>
-                        <send-form/>
-                    </v-card>
                 </v-menu>
-            </v-container>
         </v-content>
-        <!--<v-speed-dial-->
-        <!--v-model="dialog"-->
-        <!--open-on-hover-->
-        <!--top-->
-        <!--right-->
-        <!--fixed-->
-        <!--direction="bottom"-->
-        <!--:close-on-content-click="false"-->
-        <!--&gt;-->
-        <!--</v-speed-dial>-->
+
         <my-footer/>
-        <!--<v-footer app fixed>-->
-        <!--<span>&copy; 2017</span>-->
-        <!--</v-footer>-->
+        </div>
+
     </v-app>
 </template>
 
@@ -127,24 +151,7 @@
             ThisSibstroy,
             Carousels
         },
-        computed: {
-            //     $.getJSON('http://localhost/products.json', function (json) {
-            //     this.json = json;
-            //     console.log(this.json);
-            // });
-            activeFab() {
-                // $.getJSON('http://localhost/products.json', function (json) {
-                //         this.json = json;
-                //         console.log(json);
-                //     });
-                // switch (this.tabs) {
-                //     case 'one': return { 'class': 'purple', icon: 'account_circle' }
-                //     case 'two': return { 'class': 'red', icon: 'edit' }
-                //     case 'three': return { 'class': 'green', icon: 'keyboard_arrow_up' }
-                //     default: return {}
-                // }
-            }
-        },
+
         created: function () {
             fetch(location.protocol + "//" + location.host + '/products.json')
                 .then(r => r.json())
@@ -153,7 +160,29 @@
                     console.log(this.json);
                 });
         },
+        directives: {
+            scroll:
+                {
+                    inserted: function (el, binding) {
+                        let f = function (evt) {
+                            if (binding.value(evt, el)) {
+                                window.removeEventListener('scroll', f)
+                            }
+                        }
+                        window.addEventListener('scroll', f)
+                    }
+                }
+        },
+
         data: () => ({
+            offsetTop: window.innerHeight-(window.pageYOffset+window.innerHeight/2),
+            window_size: document.body.scrollHeight,
+            snackbar: false,
+            y: 'top',
+            x: null,
+            mode: '',
+            timeout: 6000,
+            text: 'Спасибо! В ближайшее время с Вами свяжется наш менеджер!',
             json: null,
             drawer: false,
             fab: false,
@@ -405,7 +434,7 @@
                     items: [
                         {
                             avatar: 'http://tehstroi.ru/images/tovar41.png',
-                            title: 'Задвижки с обрезным клином',
+                            title: 'Задвижки с обрезиняным клином',
                             dsc: '<p>Дизайну клиновых задвижек характерна надёжность до мельчайших деталей.\n' +
                             '\t</p>\n' +
                             '\t<p>Клин полностью вулканизирован резиной EPDM состав которой утверждён для контакта с питьевой водой. Клин имеет исключительную износостойкость благодаря свойству резины восстанавливать свою первоначальную форму, процессу обрезинивания сердечника двойной адгезией слоя и своей прочной конструкции. Надёжность системы уплотнения штока, состоящей из 4-х частей, высокая прочность штока и полная антикоррозийная защита обеспечивают непревзойдённую надёжность задвижки.\n' +
@@ -641,13 +670,15 @@
                 }
             ]
         }),
-        props: {
-            source: String
-        },
+        props:
+            {
+                source: String
+            }
+        ,
         methods: {
             back(title, dsc, link) {
                 this.$vuetify.goTo(0);
-                console.log(link);
+                console.log('sdfsdfsdfds');
                 if (dsc) {
                     this.$router.push({name: 'post', params: {title: title, dsc, link: link}});
                     // this.$router.push({path: 'post/'+c, props: {src, c, dsc}});
@@ -657,6 +688,22 @@
                 } else {
                     this.$router.push({name: 'home'});
                 }
+            }
+            ,
+
+            handleScroll: function (evt, el) {
+                console.log(window.scrollY);
+                this.dialog=false;
+                // this.offsetTop=window.innerHeight-(window.pageYOffset+window.innerHeight/2);
+                // this.offsetTop=;
+                // this.offsetTop=document.body.scrollHeight;
+                // if (window.scrollY > 50) {
+                //     el.setAttribute(
+                //         'style',
+                //         'opacity: 1; transform: translate3d(0, -10px, 0)'
+                //     )
+                // }
+                // return window.scrollY > 100
             }
         }
         // if(v!='') {

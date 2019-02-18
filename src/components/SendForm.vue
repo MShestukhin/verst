@@ -13,6 +13,7 @@
                         <v-text-field
                                 v-model="name"
                                 label="Имя"
+                                box
                                 required
                                 @input="$v.name.$touch()"
                                 @blur="$v.name.$touch()"
@@ -22,6 +23,7 @@
                                 v-model="phone"
                                 mask="phone"
                                 prefix=" +7 "
+                                box
                                 required
                                 label="Телефон"
                                 @input="$v.phone.$touch()"
@@ -46,6 +48,7 @@
     export default {
         mixins: [validationMixin],
         name: "SendForm",
+        props: ['snackbar'],
         validations: {
             name: {required},
             phone: {required},
@@ -56,64 +59,32 @@
             name: '',
             phone: '',
             select: null,
-            items: [
-                'Водоснабжение',
-                'Водоотведение',
-                'Газораспределение',
-                'Трубы в теплоизоляции'
-            ],
             checkbox: false
         }),
 
         computed: {
-            nameErrors() {
-                const errors = []
-                if (!this.$v.name.$dirty) return errors
-                !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
-                !this.$v.name.required && errors.push('Name is required.')
-                return errors
-            },
-            phoneErrors() {
-                const errors = []
-                if (!this.$v.phone.$dirty) return errors
-                !this.$v.phone.phone && errors.push('Must be valid phone')
-                !this.$v.phone.required && errors.push('Phone is required')
-                return errors
-            }
         },
 
         methods: {
             submit() {
                 this.$v.$touch();
                 const formData = new FormData();
-                console.log(this.$v.name.$model);
-                console.log(this.$v.phone.$model);
                 formData.append("name", this.$v.name.$model);
+                self=this;
+                // axios.get('http://localhost:4444/',
                 axios.post('/app/send.php',
                     {
                         name: this.$v.name.$model,
                         phone: this.$v.phone.$model
-                        //     method: 'GET',
-                        //     mode: 'no-cors',
-                        //     headers: {
-                        //         'Access-Control-Allow-Origin': '*',
-                        //         'Access-Control-Allow-Origin': 'Origin',
-                        //         'Access-Control-Allow-Origin': 'X-Requested-With',
-                        //         'Access-Control-Allow-Origin': 'Content-Type',
-                        //         'Access-Control-Allow-Origin': 'Accept',
-                        //         'Content-Type': 'application/json'
-                        //     },
-                        //     withCredentials: true,
-                        //     credentials: 'same-origin'
                     })
                     .then(function (response) {
-                        this.$v.$reset();
-                        this.name = '';
-                        this.phone = '';
+                        self.$v.$reset();
+                        self.name = '';
+                        self.phone = '';
+                        self.$emit('snackbar_show');
                         console.log(response);
                     })
                     .catch(function (error) {
-                        console.log('tut');
                         console.log(error);
                     });
             },
