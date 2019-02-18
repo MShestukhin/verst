@@ -1,60 +1,55 @@
 <template>
-    <form
-            ref="form">
+        <!--<v-layout row wrap>-->
+                    <form
+                            ref="form">
+                        <v-card class="elevation-12">
+                            <v-flex align-center justify-center>
+                            <v-toolbar dark color="orange">
+                                <!--<v-toolbar-title>-->
+                                    <h3>Оставьте свои контакты и мы Вам перезвоним!</h3>
+                                <!--</v-toolbar-title>-->
+                            </v-toolbar>
 
-        <v-text-field
-                v-model="name"
-                label="Имя"
-                :error-messages="nameErrors"
-                required
-                @input="$v.name.$touch()"
-                @blur="$v.name.$touch()"
-        ></v-text-field>
+                        <v-text-field
+                                v-model="name"
+                                label="Имя"
+                                required
+                                @input="$v.name.$touch()"
+                                @blur="$v.name.$touch()"
+                        ></v-text-field>
+                        <!--mask="phone"-->
+                        <v-text-field
+                                v-model="phone"
+                                mask="phone"
+                                prefix=" +7 "
+                                required
+                                label="Телефон"
+                                @input="$v.phone.$touch()"
+                                @blur="$v.phone.$touch()"
+                        ></v-text-field>
 
-        <v-text-field
-                v-model="phone"
-                :error-messages="phoneErrors"
-                required
-                label="Телефон"
-                mask="phone"
-                @input="$v.phone.$touch()"
-                @blur="$v.phone.$touch()"
-        ></v-text-field>
-
-        <v-btn @click="submit">Отправить</v-btn>
-        <v-btn @click="clear">Очистить</v-btn>
-    </form>
+                        <v-btn @click="submit">Отправить</v-btn>
+                        <v-btn @click="clear">Очистить</v-btn>
+                            </v-flex>
+                        </v-card>
+                    </form>
+            <!--</v-flex>-->
+        <!--</v-layout>-->
 </template>
 
 <script>
-    import { validationMixin } from 'vuelidate'
-    import { required, maxLength, email } from 'vuelidate/lib/validators'
+    import {validationMixin} from 'vuelidate'
+    import {required, maxLength, email} from 'vuelidate/lib/validators'
     import axios from 'axios'
     import Vue from 'vue'
-    // var nodemailer = require('nodemailer');
-    // const net = require('net');
-    // var transporter = nodemailer.createTransport({
-    //     service: 'gmail',
-    //     auth: {
-    //         user: 'sibtrade.tech@gmail.com',
-    //         pass: 'wz2egnb9'
-    //     }
-    // });
-    //
-    // var mailOptions = {
-    //     from: 'sibtrade.tech@gmail.com',
-    //     to: 'shist95@mail.ru',
-    //     subject: 'Sending Email using Node.js',
-    //     text: 'That was easy!'
-    // };
 
     export default {
         mixins: [validationMixin],
         name: "SendForm",
         validations: {
-            name: { required },
-            phone: { required },
-            select: { required }
+            name: {required},
+            phone: {required},
+            select: {required}
         },
         data: () => ({
             valid: true,
@@ -71,26 +66,14 @@
         }),
 
         computed: {
-            checkboxErrors () {
-                const errors = []
-                if (!this.$v.checkbox.$dirty) return errors
-                !this.$v.checkbox.checked && errors.push('You must agree to continue!')
-                return errors
-            },
-            selectErrors () {
-                const errors = []
-                if (!this.$v.select.$dirty) return errors
-                !this.$v.select.required && errors.push('Item is required')
-                return errors
-            },
-            nameErrors () {
+            nameErrors() {
                 const errors = []
                 if (!this.$v.name.$dirty) return errors
                 !this.$v.name.maxLength && errors.push('Name must be at most 10 characters long')
                 !this.$v.name.required && errors.push('Name is required.')
                 return errors
             },
-            phoneErrors () {
+            phoneErrors() {
                 const errors = []
                 if (!this.$v.phone.$dirty) return errors
                 !this.$v.phone.phone && errors.push('Must be valid phone')
@@ -100,23 +83,33 @@
         },
 
         methods: {
-            submit () {
+            submit() {
                 this.$v.$touch();
-                axios.get('http://localhost:4444/', {
-                    method: 'GET',
-                    mode: 'no-cors',
-                    // headers: {
-                    //     'Access-Control-Allow-Origin': '*',
-                    //     'Access-Control-Allow-Origin': 'Origin',
-                    //     'Access-Control-Allow-Origin': 'X-Requested-With',
-                    //     'Access-Control-Allow-Origin': 'Content-Type',
-                    //     'Access-Control-Allow-Origin': 'Accept',
-                    //     'Content-Type': 'application/json'
-                    // },
-                    withCredentials: true,
-                    credentials: 'same-origin'
-                })
+                const formData = new FormData();
+                console.log(this.$v.name.$model);
+                console.log(this.$v.phone.$model);
+                formData.append("name", this.$v.name.$model);
+                axios.post('/app/send.php',
+                    {
+                        name: this.$v.name.$model,
+                        phone: this.$v.phone.$model
+                        //     method: 'GET',
+                        //     mode: 'no-cors',
+                        //     headers: {
+                        //         'Access-Control-Allow-Origin': '*',
+                        //         'Access-Control-Allow-Origin': 'Origin',
+                        //         'Access-Control-Allow-Origin': 'X-Requested-With',
+                        //         'Access-Control-Allow-Origin': 'Content-Type',
+                        //         'Access-Control-Allow-Origin': 'Accept',
+                        //         'Content-Type': 'application/json'
+                        //     },
+                        //     withCredentials: true,
+                        //     credentials: 'same-origin'
+                    })
                     .then(function (response) {
+                        this.$v.$reset();
+                        this.name = '';
+                        this.phone = '';
                         console.log(response);
                     })
                     .catch(function (error) {
@@ -124,7 +117,7 @@
                         console.log(error);
                     });
             },
-            clear () {
+            clear() {
                 this.$v.$reset()
                 this.name = ''
                 this.phone = ''

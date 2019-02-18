@@ -6,13 +6,16 @@
                 <!--<v-spacer/>-->
                 <v-flex md12>
                     <v-container>
-                        <v-layout d-flex>
+                        <v-layout d-flex fill-height>
                             <v-flex d-flex xs4>
-                                <v-container>
+                                <!--<v-container fill-height>-->
                                     <news/>
-                                </v-container>
+                                <!--</v-container>-->
                             </v-flex>
-                            <v-flex d-flex xs8>
+                            <v-flex xs1>
+
+                            </v-flex>
+                            <v-flex d-flex xs7>
                                 <projects/>
                             </v-flex>
                         </v-layout>

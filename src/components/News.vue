@@ -8,7 +8,7 @@
                     <v-toolbar-title class="orange--text">Новости</v-toolbar-title>
                 </v-toolbar>
 
-                <v-list two-line>
+                <v-list expand>
                     <template v-for="(item, index) in items">
                         <!--<v-list-tile-->
                                 <!--:key="item.title"-->
