@@ -3,7 +3,7 @@
         <v-flex xs12 sm8 offset-sm2>
             <v-card>
                 <v-list two-line subheader>
-                    <v-subheader inset>Полимерные трубы</v-subheader>
+                    <v-subheader inset  class="orange--text">Полимерные трубы</v-subheader>
 
                     <v-list-tile
                             v-for="item in items"
@@ -23,7 +23,7 @@
 
                     <v-divider inset></v-divider>
 
-                    <v-subheader inset>Аппарат для сварки полиэтиленовых труб</v-subheader>
+                    <v-subheader inset class="orange--text">Аппарат для сварки полиэтиленовых труб</v-subheader>
 
                     <v-list-tile
                             v-for="item in items2"
@@ -39,7 +39,7 @@
                             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
                         </v-list-tile-content>
                     </v-list-tile>
-                    <v-divider inset></v-divider>
+                    <v-divider inset class="orange--text"></v-divider>
 
                     <v-subheader inset>Фитинги полиэтиленовые и комплектующие</v-subheader>
 
@@ -59,7 +59,7 @@
                     </v-list-tile>
                     <v-divider inset></v-divider>
 
-                    <v-subheader inset>Запорно-регулирующая арматура</v-subheader>
+                    <v-subheader inset class="orange--text">Запорно-регулирующая арматура</v-subheader>
 
                     <v-list-tile
                             v-for="item in items4"
@@ -78,7 +78,7 @@
                     </v-list-tile>
                     <v-divider inset></v-divider>
 
-                    <v-subheader inset>Полиэтиленовые колодцы и резервуары</v-subheader>
+                    <v-subheader inset class="orange--text">Полиэтиленовые колодцы и резервуары</v-subheader>
 
                     <v-list-tile
                             v-for="item in items5"

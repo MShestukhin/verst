@@ -42,7 +42,7 @@
         </v-navigation-drawer>
         <v-toolbar app fixed clipped-left dark>
             <v-toolbar-side-icon color="orange" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-            <v-toolbar-title class="orange--text">Сибтрейд</v-toolbar-title>
+            <v-toolbar-title class="orange--text"><br>Сибтрейд <br><p class="body-1">Полимерные трубы и фитинги</p></v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
                 <!--//"back(link.name,'',link.link)"-->
@@ -114,7 +114,7 @@
                             dark
                             fab
                     >
-                        <v-icon>edit</v-icon>
+                        <v-icon>phone</v-icon>
                         <v-icon>close</v-icon>
                     </v-btn>
                 </v-menu>
@@ -678,7 +678,6 @@
         methods: {
             back(title, dsc, link) {
                 this.$vuetify.goTo(0);
-                console.log('sdfsdfsdfds');
                 if (dsc) {
                     this.$router.push({name: 'post', params: {title: title, dsc, link: link}});
                     // this.$router.push({path: 'post/'+c, props: {src, c, dsc}});

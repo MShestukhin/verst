@@ -15,6 +15,7 @@
     "dns": "^0.2.2",
     "express": "^4.16.4",
     "nodemailer": "^5.1.1",
+    "vee-validate": "^2.1.7",
     "vue": "^2.5.17",
     "vue-axios": "^2.1.4",
     "vue-pdf": "^4.0.5",
