@@ -3,7 +3,7 @@
         <v-flex xs12 sm8 offset-sm2>
             <v-card>
                 <v-list two-line subheader>
-                    <v-subheader inset  class="orange--text">Полимерные трубыФитинги полиэтиленовые и комплектующие</v-subheader>
+                    <v-subheader inset  class="orange--text">Полимерные трубы</v-subheader>
 
                     <v-list-tile
                             v-for="item in items"
