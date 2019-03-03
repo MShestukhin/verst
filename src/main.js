@@ -9,13 +9,21 @@ import  Product from './components/Product'
 import  Contacts from './components/Contacts'
 import  Company from './components/Company'
 import  Designer from './components/Designer'
+import NewProduct from './components/NewProduct'
 // register globally
 import YmapPlugin from 'vue-yandex-maps'
+import CKEditor from '@ckeditor/ckeditor5-vue';
+Vue.use( CKEditor );
 Vue.use(YmapPlugin)
 Vue.use(Router)
 
 const router = new Router({
     routes: [
+        {
+            path: '/admin',
+            name:'admin',
+            component: Main
+        },
         {
             path: '/',
             name:'home',
@@ -33,10 +41,16 @@ const router = new Router({
             component: Provider,
             props: true
         },
+        // {
+        //     path: '/product',
+        //     name:'product',
+        //     component: Product,
+        //     props: true
+        // },
         {
             path: '/product',
             name:'product',
-            component: Product,
+            component: NewProduct,
             props: true
         },
         {
